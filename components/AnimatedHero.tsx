@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export function AnimatedHero() {
   return (
-    <section className="text-center py-32 bg-gradient-to-r from-pink-500 via-purple-400 to-red-300 text-white relative overflow-hidden">
+    <section className="text-center py-10 bg-gradient-to-r from-pink-500 via-purple-400 to-red-300 text-white relative overflow-hidden">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -1,6 +1,13 @@
 import React from "react";
 
 const Footer = () => {
+  const navLinks = [
+    { name: "Home", url: "/" },
+    { name: "Product", url: "/products" },
+    { name: "About", url: "/about" },
+    { name: "Contact", url: "/contact" },
+  ];
+
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-200 py-16 mt-auto overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-orange-400/10 to-yellow-400/10 blur-3xl opacity-50 animate-pulse"></div>
@@ -23,13 +30,13 @@ const Footer = () => {
             Quick Links
           </h4>
           <ul className="space-y-2 text-sm">
-            {["Home", "Shop", "About", "Contact"].map((link) => (
-              <li key={link}>
+            {navLinks.map((link) => (
+              <li key={link.name}>
                 <a
-                  href="#"
+                  href={link.url}
                   className="hover:text-yellow-400 transition-colors duration-200"
                 >
-                  {link}
+                  {link.name}
                 </a>
               </li>
             ))}
