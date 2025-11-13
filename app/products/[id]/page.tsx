@@ -2,22 +2,26 @@
 
 import React from "react"
 import { useCart } from "@/components/CartProvider"
+import Loader from "@/components/Loader"
+import { getProductDetail } from "@/lib/products"
 
 export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = React.use(params) // ✅ unwrap the params promise
+  // ✅ Unwrap the promise
+  const { id } = React.use(params)
+
   const { addToCart } = useCart()
   const [product, setProduct] = React.useState<any>(null)
 
   React.useEffect(() => {
     async function fetchProduct() {
-      const res = await fetch(`https://fakestoreapi.com/products/${id}`)
-      const data = await res.json()
+      const data = await getProductDetail(id)
+      console.log("datadatadata", data)
       setProduct(data)
     }
     fetchProduct()
   }, [id])
 
-  if (!product) return <p className="p-10">Loading...</p>
+  if (!product) return <Loader />
 
   return (
     <div className="p-8 flex flex-col md:flex-row gap-10">
