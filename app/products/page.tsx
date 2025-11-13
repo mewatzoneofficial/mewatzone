@@ -38,7 +38,7 @@ export default function ProductsPage() {
         setCategories(categoryData);
 
         if (productData.length > 0) {
-          const prices = productData.map((p) => p.price);
+          const prices = productData.map((p: Product) => p.price);
           const minPrice = Math.min(...prices);
           const maxPrice = Math.max(...prices);
           setPriceRange([minPrice, maxPrice]);
