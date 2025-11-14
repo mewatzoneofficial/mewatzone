@@ -1,6 +1,5 @@
 import { AnimatedHero } from "@/components/AnimatedHero";
 import { AnimatedProductCard } from "@/components/AnimatedProductCard";
-import Footer from "@/components/Footer";
 import { SimpleProductCard } from "@/components/SimpleProductCard";
 import { getProducts } from "@/lib/products";
 

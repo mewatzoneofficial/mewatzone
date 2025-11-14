@@ -117,7 +117,6 @@ export default function ProductsPage() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-10">
-      {/* 🧭 Left Sidebar Filters */}
       <aside className="md:col-span-1 bg-white p-6 rounded-2xl shadow-md border border-gray-100 h-fit sticky top-10">
         <h2 className="text-xl font-semibold text-gray-800 mb-5">Filters</h2>
 
@@ -128,7 +127,6 @@ export default function ProductsPage() {
           Clear Filters
         </button>
 
-        {/* Sorting */}
         <div className="mb-6">
           <h3 className="font-semibold text-gray-700 mb-3">Sort By</h3>
           <select
@@ -143,7 +141,6 @@ export default function ProductsPage() {
           </select>
         </div>
 
-        {/* Categories */}
         <div className="mb-6">
           <h3 className="font-semibold text-gray-700 mb-3">Categories</h3>
           <div className="flex flex-col gap-2">
@@ -164,7 +161,6 @@ export default function ProductsPage() {
           </div>
         </div>
 
-        {/* Price Range */}
         <div className="mb-6">
           <h3 className="font-semibold text-gray-700 mb-3">Price Range</h3>
           <div className="flex items-center gap-2 mb-2">
@@ -193,7 +189,6 @@ export default function ProductsPage() {
         </div>
       </aside>
 
-      {/* 🛍️ Product Grid */}
       <div className="md:col-span-3">
         {filteredProducts.length === 0 ? (
           <p className="text-center text-gray-500">No products found.</p>
