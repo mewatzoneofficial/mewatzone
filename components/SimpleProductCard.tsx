@@ -7,7 +7,7 @@ export function SimpleProductCard({
 }) {
   return (
     <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl border border-gray-100">
-      <div className="bg-gradient-to-r from-pink-500 via-purple-400 to-red-300 p-[2px] rounded-2xl mb-4">
+      <div className="bg-gradient-to-r from-pink-500 via-purple-400 to-red-300 p-[0px] rounded-2xl mb-4">
         <img
           src={product.image}
           alt={product.name}
