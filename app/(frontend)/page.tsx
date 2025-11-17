@@ -1,6 +1,6 @@
-import { AnimatedHero } from "@/components/AnimatedHero";
-import { AnimatedProductCard } from "@/components/AnimatedProductCard";
-import { SimpleProductCard } from "@/components/SimpleProductCard";
+import { AnimatedHero } from "@/app/(frontend)/components/AnimatedHero";
+import { AnimatedProductCard } from "@/app/(frontend)/components/AnimatedProductCard";
+import { SimpleProductCard } from "@/app/(frontend)/components/SimpleProductCard";
 import { getProducts } from "@/lib/products";
 
 export default async function Home() {

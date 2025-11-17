@@ -1,5 +1,5 @@
 "use client"
-import { useCart } from "@/components/CartProvider"
+import { useCart } from "@/app/(frontend)/components/CartProvider"
 
 export default function CheckoutPage() {
   const { cart, clearCart } = useCart()

@@ -7,13 +7,15 @@ export function SimpleProductCard({
 }) {
   return (
     <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl border border-gray-100">
-      <div className="bg-gradient-to-r from-pink-500 via-purple-400 to-red-300 p-[0px] rounded-2xl mb-4">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-52 object-contain rounded-2xl bg-white"
-        />
-      </div>
+      <Link href={`/products/${product.id}`}>
+        <div className="bg-gradient-to-r from-pink-500 via-purple-400 to-red-300 p-[0px] rounded-2xl mb-4">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-52 object-contain rounded-2xl bg-white"
+          />
+        </div>
+      </Link>
       <h3 className="text-lg font-semibold text-gray-800 mb-1">
         {product.name}
       </h3>

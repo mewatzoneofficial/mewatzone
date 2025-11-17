@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { getProducts, getCategories } from "@/lib/products";
-import Loader from "@/components/Loader";
-import { AnimatedProductCard } from "@/components/AnimatedProductCard";
+import Loader from "@/app/(frontend)/components/Loader";
+import { AnimatedProductCard } from "@/app/(frontend)/components/AnimatedProductCard";
 
 interface Product {
   id: number;

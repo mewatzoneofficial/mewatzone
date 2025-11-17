@@ -1,8 +1,8 @@
 "use client"
 
 import React from "react"
-import { useCart } from "@/components/CartProvider"
-import Loader from "@/components/Loader"
+import { useCart } from "@/app/(frontend)/components/CartProvider"
+import Loader from "@/app/(frontend)/components/Loader";
 import { getProductDetail } from "@/lib/products"
 
 export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
