@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Sidebar from "./componants/Sidebar";
-import Footer from "./componants/Footer";
 export const metadata: Metadata = {
   title: "My App Admin",
   description: "Admin",
@@ -12,29 +11,25 @@ export default function UserLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex min-h-screen bg-gray-100 font-sans">
-      <Sidebar />
-      <main className="flex-1 p-8">
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-2xl font-semibold text-gray-800">
-              Welcome Saukat Ali
-            </h1>
-            <p className="text-red-500 mt-1 font-medium">
-              You are running 1 hour and 40 minutes late today!!
-            </p>
-          </div>
-          <div className="text-right">
-            <p className="text-gray-600">03:17 pm</p>
-            <p className="text-gray-500 text-sm">Clock In at - 11:55 am</p>
-            <button className="mt-2 px-5 py-2 bg-red-100 text-red-700 rounded-lg shadow hover:bg-red-200 transition">
-              Logout
-            </button>
-          </div>
-        </div>
-        <span>{children}</span>
-        <Footer/>
-      </main>
+    <div className="flex flex-col min-h-screen bg-gray-100 font-sans">
+      <div className="flex flex-1">
+        <Sidebar />
+        <main className="flex-1 p-8">
+          {children}
+        </main>
+      </div>
+      <footer className="mt-auto text-center text-gray-500 text-sm p-4 bg-gray">
+        <p>
+          FPS JOB &copy; 2015-25 | Crafted with{" "}
+          <i className="fas fa-heart text-red-500 mx-1"></i> by{" "}
+          <a
+            href="#"
+            className="text-primary hover:text-primary-dark font-medium transition duration-150"
+          >
+            Team Tallento.ai
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

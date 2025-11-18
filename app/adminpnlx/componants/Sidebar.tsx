@@ -7,13 +7,9 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { name: "Dashboard", path: "adminpnlx" },
-    { name: "Product", path: "products" },
-    { name: "Users", path: "/users" },
-    { name: "Jobs", path: "/jobs" },
-    { name: "Employers", path: "/employers" },
-    { name: "Reports", path: "/reports" },
-    { name: "Roles & Permission", path: "/roles-permission" },
+    { name: "Dashboard", path: "/adminpnlx" },
+    { name: "Product", path: "/adminpnlx/products" },
+    { name: "Users", path: "/adminpnlx/users" },
   ];
 
   return (
