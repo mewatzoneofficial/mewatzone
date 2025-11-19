@@ -34,20 +34,36 @@ export default function AddProduct() {
 
   const onSubmit: SubmitHandler<ProductFormData> = async (formData) => {
     try {
+      const payload = new FormData();
+      payload.append("category_id", formData.category_id);
+      payload.append("name", formData.name);
+      payload.append("price", formData.price.toString());
+      if (formData.discount_price)
+        payload.append("discount_price", formData.discount_price.toString());
+      payload.append("qty", formData.qty.toString());
+      payload.append("is_active", formData.is_active);
+      if (formData.description)
+        payload.append("description", formData.description);
+
+      const fileInput = document.querySelector(
+        'input[type="file"]'
+      ) as HTMLInputElement;
+      if (fileInput?.files?.length) {
+        payload.append("image", fileInput.files[0]);
+      }
+
       const res = await fetch(`${API_URL}api/products`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: payload,
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Failed to add product");
+      if (!res.ok) throw new Error(data.message || "Failed to added product");
 
       showSuccess(data.message || "Product added successfully");
-      reset();
       router.push("/adminpnlx/products");
     } catch (err: any) {
-      showError(err.message || "Failed to add product.");
+      showError(err.message || "Failed to added product.");
     }
   };
 
@@ -113,7 +129,8 @@ export default function AddProduct() {
           <div>
             <label className="font-medium">Price</label>
             <input
-              type="number" step="0.01"
+              type="number"
+              step="0.01"
               {...register("price", { required: "Price is required." })}
               className={`mt-1 w-full border rounded-lg p-2 ${
                 errors.price ? "border-red-500" : "border-gray-300"
@@ -131,7 +148,8 @@ export default function AddProduct() {
           <div>
             <label className="font-medium">Discount Price</label>
             <input
-              type="number" step="0.01"
+              type="number"
+              step="0.01"
               {...register("discount_price")}
               className="mt-1 w-full border border-gray-300 rounded-lg p-2"
               placeholder="0.00"
@@ -158,9 +176,16 @@ export default function AddProduct() {
           <div>
             <label className="font-medium">Image</label>
             <input
-              type="file" {...register("image")} className="mt-1 w-full border border-gray-300 rounded-lg p-2"
+              type="file"
+              {...register("image", { required: "Image required." })}
+              className="mt-1 w-full border border-gray-300 rounded-lg p-2"
               placeholder="Image"
             />
+            {errors.image && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.image.message}
+              </p>
+            )}
           </div>
 
           {/* Description */}

@@ -165,7 +165,7 @@ const Listing: React.FC = () => {
           </div>
 
           <div>
-            <label className="block font-medium mb-1">Category ID</label>
+            <label className="block font-medium mb-1">Category</label>
             <input
               type="text"
               value={searchcategory_id}
@@ -267,7 +267,7 @@ const Listing: React.FC = () => {
         )}
 
         {/* Pagination Info */}
-        <div className="flex justify-between items-center mt-4 text-sm">
+        <div className="mt-4 text-sm">
           <p>
             Showing {(page - 1) * limit + 1} to{" "}
             {Math.min(page * limit, totalEntries)} of {totalEntries} entries

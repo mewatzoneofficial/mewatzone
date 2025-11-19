@@ -14,3 +14,4 @@ export const PRODUCT_TITLES = "Products";
 
 export const EMPLOYER_TITLE = "Employer";
 export const JOB_TITLE = "Job";
+export const CATEGORY_TITLE = "Category";

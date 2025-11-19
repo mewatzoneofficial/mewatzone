@@ -58,24 +58,6 @@ export default function EditProduct() {
     fetchProduct();
   }, [productId, reset]);
 
-  // const onSubmit: SubmitHandler<ProductFormData> = async (formData) => {
-  //   try {
-  //     console.log('formData', formData);
-  //     const res = await fetch(`${API_URL}api/products/${productId}`, {
-  //       method: "PUT", 
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(formData),
-  //     });
-
-  //     const data = await res.json();
-  //     if (!res.ok) throw new Error(data.message || "Failed to update product");
-
-  //     showSuccess(data.message || "Product updated successfully");
-  //     router.push("/adminpnlx/products");
-  //   } catch (err: any) {
-  //     showError(err.message || "Failed to update product.");
-  //   }
-  // };
   const onSubmit: SubmitHandler<ProductFormData> = async (formData) => {
   try {
     const payload = new FormData();

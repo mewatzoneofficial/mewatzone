@@ -41,8 +41,8 @@ export default function ProductsPage() {
 
         // Initialize price range based on products
         if (productData.length > 0) {
-          const minPrice = Math.min(...productData.map((p) => p.price));
-          const maxPrice = Math.max(...productData.map((p) => p.price));
+          const minPrice = Math.min(...productData.map((p:any) => p.price));
+          const maxPrice = Math.max(...productData.map((p:any) => p.price));
           setPriceRange([minPrice, maxPrice]);
         }
       } catch (err) {
